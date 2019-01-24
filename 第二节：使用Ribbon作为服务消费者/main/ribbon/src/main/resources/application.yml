@@ -1,0 +1,16 @@
+
+#当前项目要被部署的端口
+#8761是注册中心  8762是服务提供者一号  8763是服务提供者二号
+server:
+  port: 8764
+
+#当前ribbon项目注册到下面配置的注册中心中
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#当前项目名
+spring:
+  application:
+    name: service-ribbon
