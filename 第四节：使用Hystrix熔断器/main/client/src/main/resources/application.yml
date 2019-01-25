@@ -1,0 +1,14 @@
+#当前项目部署的端口
+server:
+  port: 8763
+
+#配置注册中心的位置，并把自己注册进去
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#当前项目名字
+spring:
+  application:
+    name: service-client
