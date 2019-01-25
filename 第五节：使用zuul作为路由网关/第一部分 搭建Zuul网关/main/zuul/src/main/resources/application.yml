@@ -1,0 +1,23 @@
+#找到注册中心的地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#当前项目准备部署的端口
+server:
+  port: 8769
+#当前项目的服务器名称
+spring:
+  application:
+    name: service-zuul
+#配置网关路由
+zuul:
+  routes:
+    api-a:
+      #/api-ribbon/**请求转发到service-ribbon服务器
+      path: /api-ribbon/**
+      serviceId: service-ribbon
+    api-b:
+      #/api-feign/**请求转发到service-feign服务器
+      path: /api-feign/**
+      serviceId: service-feign
