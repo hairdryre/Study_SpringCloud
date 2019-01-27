@@ -1,0 +1,28 @@
+#项目部署的端口
+server:
+  port: 8001
+
+
+#配置注册中心的位置，并把自己注册进去
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  #当前项目的名字
+  application:
+    name: spring-cloud-config-server
+
+  #配置中心的相关配置
+  cloud:
+    config:
+      server:
+        git:
+          # 配置git仓库的URL地址
+          uri: https://github.com/hairdryre/Study_SpringCloud   
+          # git仓库地址下的文件夹，可以配置多个，用“,”分割。
+          search-paths: config/chapter6
+          #公共仓库可不用配置帐号密码                         
+          username:                                             
+          password:                                             
